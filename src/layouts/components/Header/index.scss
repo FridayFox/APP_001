@@ -1,0 +1,45 @@
+
+$logo_width: 100px;
+$menu_width: 190px;
+
+header {
+  grid-area: h;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+  .logo {
+    flex: 0 0 $logo_width;
+    height: 46px;
+    line-height: 46px;
+    text-align: center;
+    font-weight: 700;
+    color: #ff2e4d;
+    position: relative;
+    left: 110px;
+    transform: translateX(-50%);
+    font-size: 20px;
+  }
+  .export {
+    flex: 1;
+    position: relative;
+    & > .ant-input-affix-wrapper {
+      width:  36%;
+      top: 50%;
+      left: calc(50% + calc($menu_width - $logo_width) / 2);
+      transform: translate(-50%, -50%);
+      .ant-input-suffix {
+        cursor: pointer;
+      }
+    }
+    @media screen and (max-width: 696px) {
+      display: none;
+    }
+  }
+  .ant-menu {
+    justify-self: flex-end;
+    flex: 0 0 $menu_width;
+    @media screen and (max-width: 300px) {
+      display: none;
+    }
+  }
+}
